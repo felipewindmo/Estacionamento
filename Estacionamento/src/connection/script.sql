@@ -22,4 +22,3 @@ email varchar(200) NOT NULL,
 senha varchar(32) NOT NULL,
 PRIMARY KEY (idMoto));
 
-)

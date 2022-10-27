@@ -145,9 +145,9 @@ public class JFCadastrarVaga extends javax.swing.JFrame {
         v.setNumero(Integer.parseInt(jTFNumero.getText()));
         v.setRua(jTFRua.getText());
         if(jRBObliquia .isSelected()){
-        v.setObliquio(true);
+        v.setObliquia(true);
         }else if(jRBParalela.isSelected()){
-            v.setObliquio(false);
+            v.setObliquia(false);
         }
         dao.create(v);
     }//GEN-LAST:event_jBtnSalvarActionPerformed

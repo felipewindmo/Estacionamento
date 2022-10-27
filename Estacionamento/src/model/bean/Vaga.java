@@ -40,7 +40,7 @@ public class Vaga {
         return obliquia;
     }
 
-    public void setObliquio(boolean obliquia) {
+    public void setObliquia(boolean obliquia) {
         this.obliquia = obliquia;
     }
 }
