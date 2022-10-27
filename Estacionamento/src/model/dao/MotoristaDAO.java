@@ -18,7 +18,8 @@ public class MotoristaDAO {
     stmt.setString(4, m.getSenha());
     stmt.setString(5, m.getGenero());
     stmt.setInt(6, m.getCelular());
-    stmt.setInt(7, m.getCpf());
+    stmt.setInt(7, m.getCpf());  
+    
     stmt.executeUpdate();
     JOptionPane.showMessageDialog(null, "Motorista salvo com sucesso!");
     }catch (SQLException e){
