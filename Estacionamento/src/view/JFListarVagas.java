@@ -5,6 +5,7 @@
  */
 package view;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.dao.vagaDAO;
 import model.bean.Vaga;
@@ -33,9 +34,9 @@ public class JFListarVagas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTVaga = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jBtnExcluir = new javax.swing.JButton();
+        jBtnEditar = new javax.swing.JButton();
+        jBtnexcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -74,33 +75,52 @@ public class JFListarVagas extends javax.swing.JFrame {
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(39, 78, 375, 275);
 
-        jButton1.setText("Cadastrar Vaga");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBtnExcluir.setText("Cadastrar Vaga");
+        jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jBtnExcluirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(39, 379, 111, 25);
+        getContentPane().add(jBtnExcluir);
+        jBtnExcluir.setBounds(39, 379, 111, 25);
 
-        jButton2.setText("Editar Vaga");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(192, 379, 90, 25);
+        jBtnEditar.setText("Editar Vaga");
+        getContentPane().add(jBtnEditar);
+        jBtnEditar.setBounds(192, 379, 90, 25);
 
-        jButton3.setText("Excluir Vaga");
-        getContentPane().add(jButton3);
-        jButton3.setBounds(326, 379, 95, 25);
+        jBtnexcluir.setText("Excluir Vaga");
+        jBtnexcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnexcluirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBtnexcluir);
+        jBtnexcluir.setBounds(326, 379, 95, 25);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         readJTable();
     }//GEN-LAST:event_formWindowOpened
+
+    private void jBtnexcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnexcluirActionPerformed
+        if(jTVaga.getSelectedRow() != -1){
+            int opcao =JOptionPane.showConfirmDialog(null, "Deseja excluir a vaga selecionada?", "Exclusão", JOptionPane.YES_NO_OPTION);
+       if(opcao == 0){
+       vagaDAO dao = new vagaDAO();
+       Vaga v = new Vaga();
+       v.setIdVaga((int)jTVaga.getValueAt(jTVaga.getSelectedRow(), 0));
+       dao.delete(v);
+       }
+        }else{
+        JOptionPane.showMessageDialog(null, "Selecione uma vaga","erro",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jBtnexcluirActionPerformed
 public void readJTable(){
 DefaultTableModel modelo = (DefaultTableModel) jTVaga.getModel();
 modelo.setNumRows(0);
@@ -151,9 +171,9 @@ modelo.addRow(new Object[]{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jBtnEditar;
+    private javax.swing.JButton jBtnExcluir;
+    private javax.swing.JButton jBtnexcluir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTVaga;

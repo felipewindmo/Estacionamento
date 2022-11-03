@@ -2,12 +2,21 @@ package model.bean;
 
 public class Motorista{
 private String nome;
+private int idMotorista;
 private String genero;
 private int cpf;
 private int rg;
 private int celular;
 private String email;
 private String senha;
+
+    public int getIdMotorista() {
+        return idMotorista;
+    }
+
+    public void setIdMotorista(int idMotorista) {
+        this.idMotorista = idMotorista;
+    }
 
     public String getNome() {
         return nome;
