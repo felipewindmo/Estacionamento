@@ -101,6 +101,11 @@ public class JFCadastrarMotorista extends javax.swing.JFrame {
         jBtncancelar.setText("Cancelar");
 
         jBtnExcluir.setText("Excluir");
+        jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnExcluirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -211,6 +216,10 @@ public class JFCadastrarMotorista extends javax.swing.JFrame {
         
         dao.create(m);
     }//GEN-LAST:event_jBtnSalvarActionPerformed
+
+    private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnExcluirActionPerformed
 
     /**
      * @param args the command line arguments

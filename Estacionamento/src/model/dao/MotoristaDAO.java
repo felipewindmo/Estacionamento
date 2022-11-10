@@ -59,4 +59,22 @@ public class MotoristaDAO {
         }
         return motoristas;
     }
+    public void delete (Motorista m){
+    Connection con = ConnectionFactory.getConnection();
+    PreparedStatement stmt = null;
+    try{
+        stmt = con.prepareStatement("DELETE FROM vaga WHERE idVaga=?");
+        stmt.setInt(1, m.getIdMotorista());
+        stmt.executeUpdate();
+        JOptionPane.showMessageDialog(null, "motorista excluído com sucesso!");
+        
+        
+    }
+    catch(SQLException e){
+        JOptionPane.showMessageDialog(null, "Erro ao Excluir: " + e);
+        
+    }finally{
+    ConnectionFactory.closeConnection(con, stmt);
+    }
+}
 }

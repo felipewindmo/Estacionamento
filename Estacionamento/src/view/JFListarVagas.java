@@ -85,6 +85,11 @@ public class JFListarVagas extends javax.swing.JFrame {
         jBtnExcluir.setBounds(39, 379, 111, 25);
 
         jBtnEditar.setText("Editar Vaga");
+        jBtnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnEditarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jBtnEditar);
         jBtnEditar.setBounds(192, 379, 90, 25);
 
@@ -121,6 +126,10 @@ public class JFListarVagas extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Selecione uma vaga","erro",JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jBtnexcluirActionPerformed
+
+    private void jBtnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnEditarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnEditarActionPerformed
 public void readJTable(){
 DefaultTableModel modelo = (DefaultTableModel) jTVaga.getModel();
 modelo.setNumRows(0);
