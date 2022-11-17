@@ -7,12 +7,10 @@ package view;
 
 import model.bean.Vaga;
 import model.dao.vagaDAO;
-/**
- *
- * @author 03357081024
- */
+
 public class JFAtualizarVaga extends javax.swing.JFrame {
 
+    private static int idVaga;
     /**
      * Creates new form JFAtualizarVaga
      */
@@ -172,7 +170,19 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
-      
+Vaga v = new Vaga();
+vagaDAO vdao = new vagaDAO();
+v.setIdVaga(Integer.parseInt(lblIdVaga.getText()));
+v.setNumero(Integer.parseInt(jTFNumero.getText()));
+v.setRua(jTFRua.getText());
+if(jRBObliquia.isSelected()){
+v.setObliquia(true);
+
+}else if(jRBParalela.isSelected()){
+v.setObliquia(false);
+
+}
+vdao.update(v); //felipe esteve aqui  neste código
     }//GEN-LAST:event_jBtnSalvarActionPerformed
 
     private void jBtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarActionPerformed
@@ -217,7 +227,8 @@ public class JFAtualizarVaga extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFAtualizarVaga().setVisible(true);
+                 JFAtualizarVaga frame = new JFAtualizarVaga(idVaga);
+                 frame.setVisible(true);
             }
         });
     }
