@@ -63,7 +63,7 @@ public class MotoristaDAO {
     Connection con = ConnectionFactory.getConnection();
     PreparedStatement stmt = null;
     try{
-        stmt = con.prepareStatement("DELETE FROM vaga WHERE idVaga=?");
+        stmt = con.prepareStatement("DELETE FROM vaga WHERE idMotorista=?");
         stmt.setInt(1, m.getIdMotorista());
         stmt.executeUpdate();
         JOptionPane.showMessageDialog(null, "motorista excluído com sucesso!");
