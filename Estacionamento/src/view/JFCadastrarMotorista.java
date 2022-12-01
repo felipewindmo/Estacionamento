@@ -53,7 +53,8 @@ public class JFCadastrarMotorista extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Cadastrar Motorista");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("Cadastro de Motorista");
@@ -99,6 +100,11 @@ public class JFCadastrarMotorista extends javax.swing.JFrame {
         });
 
         jBtncancelar.setText("Cancelar");
+        jBtncancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtncancelarActionPerformed(evt);
+            }
+        });
 
         jBtnExcluir.setText("Excluir");
         jBtnExcluir.addActionListener(new java.awt.event.ActionListener() {
@@ -220,6 +226,16 @@ public class JFCadastrarMotorista extends javax.swing.JFrame {
     private void jBtnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnExcluirActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jBtnExcluirActionPerformed
+
+    private void jBtncancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtncancelarActionPerformed
+     jTFcelular.setText("");
+     jTFcpf.setText("");
+     jTFemail.setText("");
+     jTFgenero.setText("");
+     jTFnome.setText("");
+     jTFrg.setText("");
+     jTFsenha.setText("");
+    }//GEN-LAST:event_jBtncancelarActionPerformed
 
     /**
      * @param args the command line arguments

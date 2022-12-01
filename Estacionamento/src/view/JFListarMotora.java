@@ -41,6 +41,7 @@ public class JFListarMotora extends javax.swing.JFrame {
         jBtnExcluir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Listar Motoristas");
 
         jLabel1.setText("Listar Motoristas");
 
